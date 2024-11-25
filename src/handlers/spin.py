@@ -27,10 +27,17 @@ async def process_callback(callback_query: types.CallbackQuery):
                      WHERE user_id = ?
                      ''', (user_id,))
     
+    spins = cursor.execute('''
+                           SELECT spins
+                             FROM users
+                             WHERE user_id = ?
+                             ''', (user_id,)).fetchone()[0]
+    
     conn.commit()
     conn.close()
     
     await bot.send_message(callback_query.from_user.id, "😵‍💫")
+    await bot.send_message(callback_query.from_user.id, f"You have {spins} spins left!")
     
     
 @dp.callback_query_handler(lambda c: c.data == "spin+")
