@@ -10,7 +10,7 @@ inline_keyboard = InlineKeyboardMarkup()
 inline_keyboard.add(InlineKeyboardButton("Spin", callback_data="spin"))
 inline_keyboard.add(InlineKeyboardButton("Receive a spin", callback_data="spin+"))
 inline_keyboard.add(InlineKeyboardButton("Choose the language", callback_data="lang"))
-inline_keyboard.add(InlineKeyboardButton("Refferal link", callback_data="referral"))
+inline_keyboard.add(InlineKeyboardButton("Referral link", callback_data="referral"))
 
 
 language_keyboard = InlineKeyboardMarkup()
